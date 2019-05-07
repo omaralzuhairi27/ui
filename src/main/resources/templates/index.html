@@ -3,19 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link media="" rel="stylesheet" th:href="@{/css/style.css}" type="text/css">
 
 </head>
 <body>
 
-
+<table class="blueTable">
+    <tr>
 <form method="post" th:action="@{/}" th:object="${message}">
-    <label>send the message</label>
+    <h1>Send the message</h1>
     <input th:field="*{text}" type="text"/>
     <button type="submit">send the message</button>
 </form>
+    </tr>
+    <tr>
 
-<h2>Message sent: <span th:text="${ciphertext.text}">Message that you sent</span></h2>
-
+<h2>Message Sent: <span th:text="${ciphertext.text}">Message that you sent</span></h2>
+</tr>
+</table>
 
 </body>
 </html>
