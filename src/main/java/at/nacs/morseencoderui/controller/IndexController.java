@@ -33,7 +33,7 @@ public class IndexController {
 
   @GetMapping
   String page() {
-    return "/index";
+    return "index";
   }
 
   @PostMapping
