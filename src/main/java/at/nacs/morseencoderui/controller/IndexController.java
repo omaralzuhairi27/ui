@@ -17,6 +17,8 @@ import javax.validation.Valid;
 @Controller
 @RequiredArgsConstructor
 public class IndexController {
+
+
   private final Manager manager;
 
   private Message ciphertext = new Message();
