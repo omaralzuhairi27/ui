@@ -1,6 +1,2 @@
 server:
   port: 8080
-
-
-encoder:
-  url: http://localhost:9000/encode
