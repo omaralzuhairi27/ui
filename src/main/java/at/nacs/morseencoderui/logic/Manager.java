@@ -10,8 +10,7 @@ import org.springframework.web.client.RestTemplate;
 @RequiredArgsConstructor
 public class Manager {
   private final EncoderUiClient encoderUiClient;
-  public String post(Message message) {
-    String plaintext = message.getText();
-    return encoderUiClient.post(plaintext);
+  public String post(String message) {
+    return encoderUiClient.post(message);
   }
 }

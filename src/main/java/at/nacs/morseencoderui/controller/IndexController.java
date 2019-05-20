@@ -22,10 +22,11 @@ public class IndexController {
   private final Manager manager;
 
   private Message ciphertext = new Message();
+  private Message message = new Message();
 
   @ModelAttribute("message")
   Message message() {
-    return new Message();
+    return message;
   }
 
   @ModelAttribute("ciphertext")
@@ -43,7 +44,12 @@ public class IndexController {
     if (result.hasErrors()) {
       return page();
     }
-    ciphertext.setText(manager.post(message));
+    if (message.getText() == null) {
+      return "redirect:/";
+    }
+    String text = message.getText();
+    ciphertext.setText(manager.post(text));
+    message.setText(message.getText());
     return "redirect:/";
   }
 }
